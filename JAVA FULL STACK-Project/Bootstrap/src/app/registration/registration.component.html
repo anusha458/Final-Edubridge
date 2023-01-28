@@ -1,0 +1,75 @@
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" #insert="ngForm" (ngSubmit)="insertData(insert)" >
+
+                <div class="form-outline mb-4">
+                  <input type="name"  class="form-control " placeholder="name"  name="name" id="name" formControlName="name" ngModel="name" />
+                  <label class="form-label" for="name">Your Name</label><div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">Name is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">Name is Too Short.</div>
+                  <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">Name should start with Alphabet.</div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" class="form-control" placeholder="email"  name="email" id="email" formControlName="email" ngModel="email" />
+                  <label class="form-label" for="email">Your Email</label><div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">Email is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">Email is Invalid.</div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="pno" class="form-control" placeholder="pno"  name="pno" id="pno" formControlName="pno" ngModel="pno" />
+                  <label class="form-label" for="pno">Your Mobile Number</label><div class="form-text text-danger" *ngIf="Pno.errors?.['required'] && (Pno.touched || Pno.dirty)">Mobile Number is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Pno.errors?.['minlength'] && (Pno.touched || Pno.dirty)">Mobile Number is Too Short.</div>
+                  <div class="form-text text-danger" *ngIf="Pno.errors?.['maxlength'] && (Pno.touched || Pno.dirty)">Mobile Number should be 10-digits.</div>
+                  <div class="form-text text-danger" *ngIf="Pno.errors?.['pattern'] && (Pno.touched || Pno.dirty)">Mobile Number have to starts with Numeric Digits.</div>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <input type="password"  class="form-control" placeholder="pswd"  name="pswd" id="pswd" formControlName="pswd" ngModel="pswd"/>
+                  <label class="form-label" for="pswd">Password</label><div class="form-text text-danger" *ngIf="Pswd.errors?.['required'] && (Pswd.touched || Pswd.dirty)">Password is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Pswd.errors?.['minlength'] && (Pswd.touched || Pswd.dirty)">Passwoord is Invalid.</div>
+                  <div class="form-text text-danger" *ngIf="Pswd.errors?.['maxlength'] && (Pswd.touched || Pswd.dirty)">Password has allowed 15-digits.</div>
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="Cpswd"  class="form-control" placeholder="cpswd"  name="cpswd" id="cpswd" formControlName="cpswd" ngModel="cpswd"/>
+                  <label class="form-label" for="cpswd">Confirm your password</label><div class="form-text text-danger" *ngIf="Cpswd.errors?.['required'] && (Cpswd.touched || Cpswd.dirty)">Confirm-Password is Invalid.</div>
+                  <div class="form-text text-danger" *ngIf="Cpswd.errors?.['minlength'] && (Cpswd.touched || Cpswd.dirty)">Passwoord is Invalid.</div>
+                  <div class="form-text text-danger" *ngIf="Cpswd.errors?.['maxlength'] && (Cpswd.touched || Cpswd.dirty)">Password has allowed 15-digits.</div>
+                 
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <input type="submit" value="submit" onclick="validation();"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#login"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+             
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
